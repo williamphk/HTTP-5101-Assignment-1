@@ -10,23 +10,35 @@ namespace HTTP_5101_Assignment_1.Controllers
     public class GreetingController : ApiController
     {
         /// <summary>
-        /// This method returns the string "Hello World!"
-        /// <example> POST api/Greeting </example>
+        /// This function returns the string "Hello World! using POST method
         /// </summary>
-        /// <returns>"Hello World!"</returns>
+        /// <returns>
+        /// "Hello World!"
+        /// </returns>
+        /// <example>
+        /// POST api/Greeting -> "Hello World!"
+        /// </example>
+        [Route("api/Greeting")]
         public string POST()
         {
             return "Hello World!";
         }
 
         /// <summary>
-        /// This method returns the string “Greetings to {id} people!” where id is an integer value."
-        /// <example> GET api/Greeting/6 </example>
+        /// This method returns the string “Greetings to {number} people!” where number is an integer value."
         /// </summary>
-        /// <returns>"Greetings to {id} people!"</returns>
-        public string GET(int id)
+        /// <param name="number">number of people</param>
+        /// <returns>
+        /// a string greeting the number of people
+        /// number: 6 -> "Greetings to 6 people!"
+        /// </returns>
+        /// <example>
+        /// GET: api/Greeting/6  -> "Greetings to 6 people!"
+        /// </example>
+        [Route("api/Greeting/{number}")]
+        public string GET(int number)
         {
-            return "Greetings to " + id + " people!";
+            return "Greetings to " + number + " people!";
         }
     }
 }

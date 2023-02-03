@@ -11,14 +11,20 @@ namespace HTTP_5101_Assignment_1.Controllers
     public class NumberMachineController : ApiController
     {
         /// <summary>
-        /// This method return an integer after applying four mathematical operations to the integer input {id}
-        /// <example> GET api/NumberMachine/2</example>
+        /// This method calculate the result by applying four mathematical operations
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns>{id}+{id}-{id}*{id}/{id}</returns>
-        public int GET(int id)
+        /// <param name="number">integer input</param>
+        /// <returns>
+        /// an integer after applying four mathematical operations to the integer input
+        /// number: 2 -> 2
+        /// </returns>
+        /// <example> 
+        /// GET: api/NumberMachine/2 -> "2"
+        /// </example>
+        [Route("api/NumberMachine/{number}")]
+        public int GET(int number)
         {
-            return id + id - id * id / id;
+            return number + number - number * number / number;
         }
     }
 }

@@ -10,14 +10,20 @@ namespace HTTP_5101_Assignment_1.Controllers
     public class AddTenController : ApiController
     {
         /// <summary>
-        /// This method returns 10 more than the integer input {id} when receiving a get request.
-        /// <example> GET api/AddTen/5 </example>
+        /// This function add 10 to the integer input 
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns>{id}+10</returns>
-        public int Get(int id)
+        /// <param name="number">integer input</param>
+        /// <returns>
+        /// 10 more than the integer input
+        /// number: 5 -> 15
+        /// </returns>
+        /// <example> 
+        /// GET: api/AddTen/5 -> 15
+        /// </example>
+        [Route("api/AddTen/{number}")]
+        public int Get(int number)
         {
-            return id + 10;
+            return number + 10;
         }
     }
 }
